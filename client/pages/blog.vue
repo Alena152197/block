@@ -1,12 +1,19 @@
 <template>
-    <h1>Блог</h1>
+    <h2>Блог</h2>
     <main>
         <div class="posts">
             <article v-for="(post, index) in posts" :key="post.id">
                 <h3>{{ post.title }}</h3>
-                <img :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText>
+                <div class="link">
+                    <img :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText>
+                    <NuxtLink :style="'background:'+post.categories[0].bg" :to="'/post/' + post.documentId">Подробнее</NuxtLink>
+                </div>
                 <p>{{ post.desc }}</p>
-                <NuxtLink :to="'/post/' + post.documentId">Подробнее</NuxtLink>
+                <!-- <ul class="tag">
+                    <li v-for="(category, index) in post.categories" :key="category.id">
+                        <NuxtLink :style="'background:'+post.categories[index].bg" :to="'/category' + post.categories[0].documentId">{{ category.title }}</NuxtLink>
+                    </li>
+                </ul> -->
             </article>
         </div>
 
@@ -23,10 +30,18 @@ const base_url = "http://localhost:1337"
 
 
 <style scoped>
+
+
+h2 {
+    text-align: center;
+
+}
+
 .posts {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 25px;
+
 }
 
 @media screen and (max-width: 1024px) {
@@ -54,32 +69,44 @@ const base_url = "http://localhost:1337"
 }
 
 article {
-    background-color: #f5f5f5;
+    background-color: #87CEEB70;
     padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 5px solid wheat;
+    border: 5px solid #00008B;
     border-radius: 15px;
+    height: max-content;
 }
 
 article img {
     width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+article h3 {
+    height: 70px;
 }
 
 article p {
-    height: 100px;
+    height: 56px;
+}
+
+article p,
+article h3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-wrap: wrap;
 }
 
 article a {
     display: block;
     text-decoration: none;
-    font-weight: 500;
-    border: 2px inset red;
+    font-weight: 700;
+    border: 2px inset blue;
     border-radius: 5px;
     padding: 5px;
-    background-color: wheat;
     width: 100px;
     text-align: center;
 }

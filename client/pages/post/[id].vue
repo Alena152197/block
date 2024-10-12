@@ -3,7 +3,7 @@
     <nav>
         <ul>
             <li><NuxtLink to="/blog">Блог</NuxtLink></li>
-            <li><NuxtLink :to="'/category/' + post.categories[0].documentId">
+            <li><NuxtLink :style="'background:'+post.categories[0].bg" :to="'/category/' + post.categories[0].documentId">
                 {{ post.categories[0].title }}</NuxtLink></li>
             <li><strong>{{ post.title }}</strong></li>
         </ul>
@@ -11,6 +11,7 @@
     <!--тело статьи-->
     <main>
         <h1>{{ post.title }}</h1>
+        <p class="date">Дата публикации: <span>{{ post.publishedAt }}</span> </p>
         <img :src=base_url+post.img[0].url :alt=post.img[0].alternativeText>
         <div v-html="mark"></div>
     </main>
@@ -39,6 +40,41 @@ useHead({
 
 
 <style scoped>
+
+nav {
+    margin: 25px 0;
+}
+
+nav ul li:nth-child(2) a {
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.date {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.date span {
+    display: inline-block;
+    text-wrap: nowrap;
+    width: 112px;
+    overflow: hidden;
+}
+
+main {
+    padding: 40px;
+    font-size: 24px;
+}
+
+main img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
 li::before {
     content: ">>";
     margin-right: 10px;
@@ -49,7 +85,7 @@ li:first-child::before {
 }
 
 img {
-    width: 500px;
+    width: 765px;
 }
 
 nav ul {

@@ -1,7 +1,9 @@
 <template>
+  <NuxtLoadingIndicator duration="5000" />
   <Navbar />
   <NuxtPage />
   <Footer />
+
 </template>
 
 <script setup>
@@ -16,7 +18,7 @@ useHead({
     { name: 'keywords', content: config.keywords },
   ],
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: base+config.favicon.url }
+    { rel: 'icon', type: 'image/x-icon', href: base + config.favicon.url }
   ]
 })
 
@@ -25,10 +27,13 @@ useHead({
 <style scoped>
 
 * {
-  margin: 0;
+  margin: 0px;
 }
 
-html, body, #__nuxt {
+
+html,
+body,
+#__nuxt {
   width: 100%;
   height: 100%;
   display: flex;
@@ -38,5 +43,4 @@ html, body, #__nuxt {
 main {
   flex: 1 1 auto;
 }
-
 </style>

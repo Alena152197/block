@@ -16,11 +16,12 @@
 
 <style scoped>
 
+
 nav {
-    background-color: rgb(247, 175, 92);
+    background-color: #87CEFA;
     padding: 5px;
     border-radius: 10px;
-    
+
 }
 
 ul {
@@ -41,8 +42,6 @@ li a:hover {
     border-radius: 5px;
     padding: 5px;
     background-color: wheat;
-    
-} 
 
-
+}
 </style>
