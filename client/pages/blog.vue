@@ -6,7 +6,8 @@
                 <h3>{{ post.title }}</h3>
                 <div class="link">
                     <img :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText>
-                    <NuxtLink :style="'background:'+post.categories[0].bg" :to="'/post/' + post.documentId">Подробнее</NuxtLink>
+                    <NuxtLink :style="'background:' + post.categories[0].bg" :to="'/post/' + post.documentId">Подробнее
+                    </NuxtLink>
                 </div>
                 <p>{{ post.desc }}</p>
                 <!-- <ul class="tag">
@@ -30,8 +31,6 @@ const base_url = "http://localhost:1337"
 
 
 <style scoped>
-
-
 h2 {
     text-align: center;
 
@@ -43,6 +42,11 @@ h2 {
     gap: 25px;
 
 }
+
+.posts :nth-child(1) {
+    grid-column: 1/ -1;
+}
+
 
 @media screen and (max-width: 1024px) {
     .posts {
@@ -115,5 +119,4 @@ article a:hover {
     padding: 7px;
     color: red;
 }
-
 </style>
