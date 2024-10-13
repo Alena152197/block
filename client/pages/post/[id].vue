@@ -49,7 +49,9 @@ nav ul li:nth-child(2) a {
     padding: 10px;
     text-decoration: none;
     color: black;
+    
 }
+
 
 .date {
     display: flex;
@@ -75,13 +77,16 @@ main img {
     object-fit: cover;
 }
 
+
 li::before {
     content: ">>";
     margin-right: 10px;
+    
 }
 
 li:first-child::before {
     display: none;
+    
 }
 
 img {
