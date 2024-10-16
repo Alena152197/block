@@ -1,5 +1,5 @@
 <template>
-  <NuxtLoadingIndicator duration="5000" />
+  <NuxtLoadingIndicator throttle="0" />
   <Navbar />
   <NuxtPage />
   <Footer />
@@ -26,9 +26,9 @@ useHead({
 
 <style scoped>
 
-* {
+/* * {
   margin: 0px;
-}
+} */
 
 
 html,
@@ -38,6 +38,12 @@ body,
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #00000025 0%, #000000 100%), url("http://localhost:1337/uploads/more_fcd7f2c0d2.jpg");
+  background-blend-mode: darken;
 }
 
 main {
