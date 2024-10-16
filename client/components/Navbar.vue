@@ -22,7 +22,7 @@ nav {
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(124deg, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background: linear-gradient(124deg, #e8b71d80, #e3e81d80, #1de84080, #1ddde880, #2b1de880);
     background-size: 1800% 1800%;
     border-radius: 15px;
 

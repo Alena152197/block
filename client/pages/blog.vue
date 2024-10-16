@@ -147,7 +147,7 @@ article:hover img {
     right: 0;
     height: 60px;
     width: 60px;
-    background-color: white;
+    background-color: rgb(160, 212, 255);
     display: block;
     border-radius: 30px 0 0 0;
 }
