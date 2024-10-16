@@ -5,7 +5,7 @@
         <article v-for="(post, index) in posts" :key="post.id">
             <h3>{{ post.title }}</h3>
             <div class="link">
-                <img :src="base_url + post.img[0].url" :alt=post.img.alternativeText>
+                <img :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText>
                 <NuxtLink :style="'background:' + post.categories[0].bg" :to="'/post/' + post.documentId">➽
                 </NuxtLink>
             </div>

@@ -24,7 +24,7 @@ useHead({
 
 </script>
 
-<style scoped>
+<style>
 
 /* * {
   margin: 0px;
@@ -42,8 +42,8 @@ body,
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #00000025 0%, #000000 100%), url("http://localhost:1337/uploads/more_fcd7f2c0d2.jpg");
-  background-blend-mode: darken;
+  background: url("https://i.pinimg.com/originals/3c/2b/ea/3c2bea01b4b02c0387fd99d330ae84eb.jpg");
+  background-blend-mode: color;
 }
 
 main {
