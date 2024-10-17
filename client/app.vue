@@ -40,11 +40,6 @@ body,
   flex-direction: column;
 }
 
-body {
-  margin: 0;
-  background: url("https://i.pinimg.com/originals/3c/2b/ea/3c2bea01b4b02c0387fd99d330ae84eb.jpg");
-  background-blend-mode: color;
-}
 
 main {
   flex: 1 1 auto;

@@ -94,7 +94,8 @@ ul {
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
-    padding: 25px;
+    height: 100px;
+    padding: 10px;
 }
 
 li a {

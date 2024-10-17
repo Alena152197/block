@@ -168,7 +168,7 @@ article:hover img {
     padding: 5px 10px;
     text-decoration: none;
     color: black;
-    border-radius: 3px
+    border-radius: 5px
 }
 
 .tag a:hover {
