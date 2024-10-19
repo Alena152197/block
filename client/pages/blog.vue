@@ -1,23 +1,34 @@
 <template>
-    <h2>Блог</h2>
+
     <main>
-        <article v-for="(post, index) in posts" :key="post.id">
-            <h3>{{ post.title }}</h3>
-            <div class="link">
-                <div class="img">
-                    <img :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText>
-                </div>
-                <NuxtLink :style="'background:' + post.categories[0].bg" :to="'/post/' + post.documentId">➽
+        <h2>Блог</h2>
+        <div class="articles">
+            <article v-for="(post, index) in posts" :key="post.id"
+                class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <NuxtLink :to="'/post/' + post.documentId">
+                    <img class="rounded-t-lg" :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText />
                 </NuxtLink>
-            </div>
-            <p>{{ post.desc }}</p>
-            <ul class="tag">
-                <li v-for="(category, index) in post.categories" :key="category.id">
-                    <NuxtLink :style="'background:' + post.categories[index].bg"
-                        :to="'/category' + post.categories[0].documentId">{{ category.title }}</NuxtLink>
-                </li>
-            </ul>
-        </article>
+                <div class="p-5">
+                    <NuxtLink :to="'/post/' + post.documentId">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ post.title
+                            }}</h5>
+                    </NuxtLink>
+                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ post.desc }}</p>
+                    <NuxtLink :to="'/post/' + post.documentId"
+                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Подробнее
+                        <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 5h12m0 0L9 1m4 4L9 9" />
+                        </svg>
+                    </NuxtLink>
+                </div>
+            </article>
+        </div>
+        <button type="button"
+            class="w-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Смотреть
+            еще</button>
     </main>
 </template>
 
@@ -30,149 +41,3 @@ const base_url = "http://localhost:1337"
 </script>
 
 
-<style scoped>
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: minmax(100px, auto);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 40px;
-    padding: 40px;
-}
-
-@media (max-width: 1024px) {
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
-}
-
-@media (max-width: 640px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-}
-
-article {
-    cursor: default;
-    padding: 10px;
-    border-radius: 10px;
-    height: max-content;
-    transition: all .1s linear;
-    overflow: hidden;
-}
-
-
-
-article h3 {
-    height: 70px;
-}
-
-article p {
-    height: 56px;
-}
-
-article p,
-article h3 {
-    display: -webkit-box;
-    /* -webkit-line-clamp: 3; */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-wrap: wrap;
-}
-
-article:hover {
-    background-color: #f1f1f1;
-}
-
-
-
-article:hover .link::after {
-    background-color: #f1f1f1;
-    transition-duration: 0;
-}
-
-article:hover a {
-    filter: brightness(1.2);
-}
-
-.link {
-    position: relative;
-}
-
-.img {
-    overflow: hidden;
-    border-radius: 10px;
-    height: 150px;
-}
-
-.link img {
-    border-radius: 10px;
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    transition: transform .1s linear;
-}
-
-article:hover img {
-    transform: scale(1.2)
-}
-
-.link a {
-    border-radius: 50%;
-    color: black;
-    background-color: brown;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    text-decoration: none;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-}
-
-.link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 60px;
-    width: 60px;
-    background-color: rgb(160, 212, 255);
-    display: block;
-    border-radius: 30px 0 0 0;
-}
-
-
-.tag {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.tag a {
-    display: inline-block;
-    width: max-content;
-    padding: 5px 10px;
-    text-decoration: none;
-    color: black;
-    border-radius: 5px
-}
-
-.tag a:hover {
-    filter: brightness(1.2);
-    text-decoration: underline;
-}
-</style>

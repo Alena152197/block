@@ -2,6 +2,7 @@
   <NuxtLoadingIndicator throttle="0" />
   <Navbar />
   <NuxtPage />
+  <Up />
   <Footer />
 
 </template>
@@ -18,30 +19,13 @@ useHead({
     { name: 'keywords', content: config.keywords },
   ],
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: base + config.favicon.url }
-  ]
+    { rel: 'icon', type: 'image/x-icon', href: base+config.favicon.url }
+  ],
+  bodyAttrs: {
+    class: 'container mx-auto'
+  },
 })
 
 </script>
 
-<style>
 
-/* * {
-  margin: 0px;
-} */
-
-
-html,
-body,
-#__nuxt {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-
-main {
-  flex: 1 1 auto;
-}
-</style>
