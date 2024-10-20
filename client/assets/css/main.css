@@ -27,7 +27,7 @@ main {
     grid-template-rows: repeat(4, 1fr);
     gap: 40px;
     padding: 40px;
-    height: 100vh !important;
+    /* height: 100vh !important; */
 }
 
 @media (max-width: 1024px) {
@@ -55,6 +55,8 @@ article h5 {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-wrap: wrap;
+    
+    
 }
 
 article p {
@@ -62,11 +64,15 @@ article p {
 }
 
 article h5 {
-    height: 100px;
+    height: 70px;
 }
 
 article img {
     height: 150px;
     width: 100%;
     object-fit: cover;
+}
+
+.p-5 {
+    background-color: rgb(182, 248, 83);
 }
