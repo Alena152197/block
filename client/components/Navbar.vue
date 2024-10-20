@@ -7,7 +7,7 @@
             <a href="https://localhost3000/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="http://localhost:1337/uploads/free_30_instagram_stories_icons81_122628_749474acd3.png"
                     class="h-8" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Великие воды</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Путешественник</span>
             </a>
             <div class="flex md:order-2">
                 <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
