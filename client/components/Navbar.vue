@@ -95,15 +95,14 @@
     </nav> -->
 </template>
 
-[activeClass]: isActive
+
 
 <script setup>
 const route = useRoute()
-const path = route.path
 const searchQuery = defineModel()
 
 const isActive = (path) => route.path.split('/')[1] === path
-const activeClass = ref('text-blue-500')
+
 
 // if (route.path === 'contact') {
 

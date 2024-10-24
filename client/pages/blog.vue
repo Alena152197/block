@@ -34,9 +34,9 @@
 </template>
 
 <style>
-/* .articles {
+.articles {
     height: 100vh;
-} */
+}
 </style>
 
 
