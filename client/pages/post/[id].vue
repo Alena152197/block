@@ -1,5 +1,5 @@
 <template>
-    <!--хлебные крошки-->
+
     <!-- <nav>
         <ul>
             <li>
@@ -17,7 +17,7 @@
 
 
     <main class="max-w-screen-xl min-w-96 md:min-w-[48rem] lg:min-w-[56rem] mx-auto py-2">
-
+            <!--хлебные крошки-->
         <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
@@ -59,7 +59,7 @@
         </nav>
 
 
-        <div class="h-80 rounded 2xl my-4 bg-fixed bg-cover"
+        <div class="h-80 rounded 2xl my-4 bg-fixed bg-[length:100%_600px]"
             :style="'background-image: url(' + base_url + post.img[0].url + ')'"></div>
         <h1>{{ post.title }}</h1>
         <p class="date">Дата публикации: <span>{{ post.publishedAt }}</span> </p>

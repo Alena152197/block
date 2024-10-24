@@ -101,4 +101,7 @@ const searchQuery = defineModel()
 
 const isActive = (path) => route.path.split('/')[1] === path
 
+
+
+
 </script>
