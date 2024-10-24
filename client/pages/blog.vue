@@ -1,11 +1,11 @@
 <template>
 
     <main>
-        <h2>Блог</h2>
-        <div class="articles">
+        <h2 class="text-4xl font-extrabold my-4 dark:text-white">Блог</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mb-4">
             <article v-for="post in displayedPosts" :key="post.id"
                 class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <NuxtLink :to="'/post/' + post.documentId">
+                <NuxtLink class="block overflow-hidden" :to="'/post/' + post.documentId">
                     <img class="rounded-t-lg" :src="base_url + post.img[0].url" :alt=post.img[0].alternativeText />
                 </NuxtLink>
                 <div class="p-5">
@@ -29,24 +29,18 @@
         <button v-if="!(displayedPosts.length === posts.length)" @click="loadMore" type="button"
             class="w-full text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">Смотреть
             еще</button>
-
     </main>
 </template>
-<!-- 
-<style scoped>
-.articles {
-    height: 100vh;
-}
-</style> -->
+
 
 
 <script setup>
 const api = await $fetch('http://localhost:1337/api/posts?populate=*')
 const posts = api.data
 
-const displayedPosts = ref(posts.slice(0, 5));
+const displayedPosts = ref(posts.slice(0, 3));
 const loadMore = () => {
-    displayedPosts.value = displayedPosts.value.concat(posts.slice(displayedPosts.value.length, displayedPosts.value.length + 5));
+    displayedPosts.value = posts.slice(0, displayedPosts.value.length + 3);
 }
 
 const base_url = "http://localhost:1337"

@@ -8,23 +8,23 @@
     <!-- Carousel wrapper -->
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="https://avatars.mds.yandex.net/i?id=25f665cea60df8c45db991f33a6902ae_l-5235821-images-thumbs&n=13" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://i.sunhome.ru/religion/159/nebesnie-kartini.orig.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="https://wikiway.com/upload/hl-photo/cd6/479/chernoe-more_100.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://avatars.mds.yandex.net/i?id=25f665cea60df8c45db991f33a6902ae_l-5235821-images-thumbs&n=13" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="https://wikiway.com/upload/hl-photo/eb4/a77/chernoe-more_89.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://avatars.mds.yandex.net/i?id=25f665cea60df8c45db991f33a6902ae_l-5235821-images-thumbs&n=13" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        <div class="duration-700 ease-in-out" data-carousel-item>
+            <img src="https://wikiway.com/upload/hl-photo/29d/ddd/chernoe-more_85.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 5 -->
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="duration-700 ease-in-out" data-carousel-item>
             <img src="https://avatars.mds.yandex.net/i?id=25f665cea60df8c45db991f33a6902ae_l-5235821-images-thumbs&n=13" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
     </div>
