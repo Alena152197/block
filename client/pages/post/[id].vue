@@ -38,7 +38,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="m1 9 4-4-4-4" />
                         </svg>
-                        <NuxtLink to="'/category/' + post.categories[0].documentId"
+                        <NuxtLink :to="'/category/' + post.categories[0].documentId"
                             class="ms-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">
                             {{ post.categories[0].title }}
                         </NuxtLink>
@@ -59,10 +59,10 @@
         </nav>
 
 
-        <div class="h-80 rounded 2xl my-4 bg-fixed bg-[length:100%_600px]"
+        <div class="h-96 rounded 2xl my-10 bg-fixed bg-[length:90%_600px]"
             :style="'background-image: url(' + base_url + post.img[0].url + ')'"></div>
-        <h1>{{ post.title }}</h1>
-        <p class="date">Дата публикации: <span>{{ post.publishedAt }}</span> </p>
+        <strong><h1>{{ post.title }}</h1></strong>
+        <p class="date">Дата публикации: <span>{{ post.publishedAt }}</span> </p> <br>
         <div v-html="mark"></div>
         <!-- <img :src=base_url+post.img[0].url :alt=post.img[0].alternativeText> -->
     </main>

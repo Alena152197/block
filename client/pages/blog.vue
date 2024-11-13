@@ -38,9 +38,9 @@
 const api = await $fetch('http://localhost:1337/api/posts?populate=*')
 const posts = api.data
 
-const displayedPosts = ref(posts.slice(0, 3));
+const displayedPosts = ref(posts.slice(0, 6));
 const loadMore = () => {
-    displayedPosts.value = posts.slice(0, displayedPosts.value.length + 3);
+    displayedPosts.value = posts.slice(0, displayedPosts.value.length + 6);
 }
 
 const base_url = "http://localhost:1337"
