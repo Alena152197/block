@@ -3,13 +3,15 @@
     <!-- {{ route }} -->
 
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
+
         <div class="flex flex-wrap items-center justify-between mx-auto py-4">
             <a href="https://localhost3000/" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <img src="http://localhost:1337/uploads/free_30_instagram_stories_icons81_122628_749474acd3.png"
                     class="h-8" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Путешественник</span>
             </a>
-            <div class="flex md:order-2">
+            <div class="flex gap-8 md:order-2">
+                <DarkMode />
                 <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
                     aria-expanded="false"
                     class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
@@ -62,18 +64,18 @@
                     <li>
                         <NuxtLink to="/"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                            :class="{ 'md:text-blue-700': isActive('') }">Главная</NuxtLink>
+                            :class="{ 'md:text-blue-700': isActive(''), 'dark:text-blue-700': isActive('') }">Главная</NuxtLink>
                     </li>
                     <li>
                         <NuxtLink to="/blog"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                            :class="{ 'md:text-blue-700': isActive('blog') || isActive('post') || isActive('category') }">
+                            :class="{ 'md:text-blue-700': isActive('blog') || isActive('post') || isActive('category'), 'dark:text-blue-700': isActive('blog') || isActive('post') || isActive('category') }">
                             Блог</NuxtLink>
                     </li>
                     <li>
                         <NuxtLink to="/contact"
                             class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                            :class="{ 'md:text-blue-700': isActive('contact') }">Контакты</NuxtLink>
+                            :class="{ 'md:text-blue-700': isActive('contact'), 'dark:text-blue-700': isActive('contact') }">Контакты</NuxtLink>
                     </li>
                 </ul>
             </div>
@@ -84,24 +86,19 @@
 
 
 <script setup>
-
-// useHead({
-//     script: [
-//         {
-//             src: 'https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js',
-//             async: true,
-//             defer: true
-//         }
-//     ]
-// })
-
-
 const route = useRoute()
-const searchQuery = defineModel()
-
 const isActive = (path) => route.path.split('/')[1] === path
 
 
+useHead({
+    script: [
+        {
+            src: 'https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js',
+            async: true,
+            defer: true
+        }
+    ]
+})
 
 
 </script>
